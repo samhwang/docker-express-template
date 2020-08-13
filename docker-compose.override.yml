@@ -1,0 +1,30 @@
+version: "3.7"
+services:
+    app:
+        build:
+            target: development
+        container_name: project_name_app_dev
+        image: project_name:development
+        restart: unless-stopped
+        volumes:
+            - .:/src/app
+            - "src/app/node_modules"
+
+    db:
+        container_name: project_name_db_dev
+        restart: unless-stopped
+
+    adminer:
+        container_name: project_name_adminer_dev
+        image: adminer:4.7.7
+        ports:
+            - "8080:8080"
+        restart: unless-stopped
+
+    mailhog:
+        container_name: project_name_mailhog_dev
+        image: mailhog/mailhog:latest
+        ports:
+            - "1025:1025"
+            - "8025:8025"
+        restart: unless-stopped

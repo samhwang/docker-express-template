@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+    app:
+        build:
+            target: production
+        container_name: project_name_app
+        image: project_name:production
+        restart: always
+
+    db:
+        container_name: project_name_db
+        restart: always
