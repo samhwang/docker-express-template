@@ -45,6 +45,7 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack -w",
-    "lint": "eslint src/**/*.ts"
+    "lint": "eslint src/**/*.ts",
+    "test": "jest"
   }
 }
