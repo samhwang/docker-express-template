@@ -1,6 +1,7 @@
 import * as path from 'path';
-import { Configuration } from 'webpack';
+import type { Configuration } from 'webpack';
 import NodemonPlugin from 'nodemon-webpack-plugin';
+import Dotenv from 'dotenv-webpack';
 
 const config: Configuration = {
     target: 'node',
@@ -12,6 +13,9 @@ const config: Configuration = {
     },
     plugins: [
         new NodemonPlugin(),
+        new Dotenv({
+            path: path.resolve(__dirname, './.env')
+        })
     ],
     resolve: {
         extensions: ['.ts', '.js'],
