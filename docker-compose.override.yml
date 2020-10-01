@@ -7,5 +7,5 @@ services:
         image: project_name:development
         restart: unless-stopped
         volumes:
-            - .:/src/app
+            - ./express:/src/app
             - "src/app/node_modules"
