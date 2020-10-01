@@ -12,7 +12,7 @@ RUN yarn install
 COPY . .
 
 EXPOSE 80
-CMD ["yarn", "run", "start"]
+CMD ["yarn", "start"]
 
 # Build for production
 FROM development as build
@@ -24,6 +24,7 @@ RUN yarn build && \
 FROM base as production
 
 COPY --from=build /src/app/build build
+COPY --from=build /src/app/node_modules node_modules
 
 EXPOSE 80
-CMD ["node", "index.bundle.js"]
+CMD ["node", "build/index.js"]
