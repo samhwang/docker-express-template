@@ -1,7 +1,8 @@
 {
   "env": {
     "es6": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
   "extends": ["airbnb-base"],
   "globals": {
@@ -10,9 +11,6 @@
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
     "ecmaVersion": 2020,
     "sourceType": "module"
   },
@@ -26,5 +24,12 @@
         "extensions": [".js", ".ts"]
       }
     }
+  },
+  "rules": {
+    "import/extensions": ["error", "never"],
+    "no-console": "off",
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "no-use-before-define": ["error", "nofunc"]
   }
 }
