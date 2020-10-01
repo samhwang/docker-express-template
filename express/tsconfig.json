@@ -11,10 +11,12 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "baseUrl": "."
+    "isolatedModules": false,
+    "outDir": "build",
+    "declaration": true,
+    "sourceMap": true,
+    "removeComments": true
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "build", "scripts"]
+  "exclude": ["node_modules", "build", "scripts", "**/*.test.ts"]
 }
