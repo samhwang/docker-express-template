@@ -1,5 +1,5 @@
 # Base image with maintainer label
-FROM node:12.18.2-alpine3.12 as base
+FROM node:12.18.3-alpine3.12 as base
 LABEL maintainer="Sam Huynh <samhwang2112.dev@gmail.com>"
 WORKDIR /src/app
 
